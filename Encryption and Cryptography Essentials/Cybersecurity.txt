@@ -36,7 +36,9 @@ openssl pkey -in bob_private_key.pem -pubout -out bob_public_key.pem
 
 openssl pkeyutl -derive -inkey alice_private_key.pem -peerkey bob_public_key.pem -out alice_shared_secret.bin  
 
-openssl pkeyutl -derive -inkey bob_private_key.pem -peerkey alice_public_key.pem -out bob_shared_secret.bin  
+openssl pkeyutl -derive -inkey bob_private_key.pem -peerkey alice_public_key.pem -out bob_shared_secret.bin 
+
+diff alice_shared_secret.bin bob_shared_secret.bin 
 
 Task 6: Public Key Infrastructure (PKI) setup 
 
